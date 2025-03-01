@@ -41,8 +41,8 @@ for (let i = 0; i < particleCount; i++) {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         size: Math.random() * 3 + 1,
-        speedX: Math.random() * 2 - 1,
-        speedY: Math.random() * 2 - 1,
+        speedX: Math.random() * 1 - 1,
+        speedY: Math.random() * 1 - 1,
         color: "#00eaff"
     });
 }
