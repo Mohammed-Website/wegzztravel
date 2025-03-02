@@ -2,6 +2,49 @@
 
 
 
+/* Smooth Background Animation */
+@keyframes animate-bg {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* Full-Screen Open/Close Animation */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Fade-out and Zoom-out animation */
+@keyframes zoomOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+
 
 /* General Reset */
 * {
@@ -141,6 +184,10 @@ html {
   align-content: center;
 }
 
+#mughader_chat_input textarea::placeholder {
+  color: white;
+}
+
 #mughader_chat_input button {
   background: #007081;
   color: white;
@@ -247,7 +294,6 @@ html {
 
 
 
-/* Header Styling */
 /* Header Styling with Neon Background Animation */
 #mughader_header {
   background: black;
@@ -308,7 +354,7 @@ header.hidden {
 .mughader_nav_links a,
 .mughader_mobile_sidebar a {
   color: white;
-  text-shadow: 0 0 5px #00eaff;
+  text-shadow: 0 0 2px #00eaff;
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
@@ -332,7 +378,6 @@ header.hidden {
 
 .mughader_social_icon ion-icon:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 10px #00eaff;
 }
 
 /* Mobile Menu Icon */
@@ -513,7 +558,7 @@ header.hidden {
   font-size: 2.5rem;
   font-weight: bold;
   text-transform: uppercase;
-  text-shadow: 0 0 5px #00eaff, 0 0 5px #00eaff;
+  text-shadow: 0 0 3px #00eaff, 0 0 3px #00eaff;
 }
 
 /* Subtitle Styling */
@@ -521,7 +566,7 @@ header.hidden {
   font-size: 1.2rem;
   margin-top: 10px;
   color: #b0f5ff;
-  text-shadow: 0 0 5px #00eaff;
+  text-shadow: 0 0 3px #00eaff;
 }
 
 /* Button Styling */
@@ -592,7 +637,11 @@ header.hidden {
 /* Section Styling */
 #scrollable_cards_section_id {
   padding: 20px;
-  background-color: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #ffffff, #0087b047, #ffffff, #0087b047);
+  background-size: 300% 100%;
+  animation: animate-bg 10s linear infinite;
 }
 
 /* Title Styling with Animated Background */
@@ -606,27 +655,11 @@ header.hidden {
   padding: 10px 5px 10px 0;
   border-top-right-radius: 7px;
   border-top-left-radius: 7px;
-
-  /* Extended Gradient for Seamless Loop */
+  text-shadow: 0 0 2px #0ff, 0 0 2px #0ff;
   background: linear-gradient(90deg, #457b9d, #1d3557, #457b9d, #1d3557);
-  background-size: 400% 100%;
-  animation: moveGradientSeamless 5s linear infinite;
+  background-size: 300% 100%;
+  animation: animate-bg 10s linear infinite;
 }
-
-/* Keyframes for Seamless Background Movement */
-@keyframes moveGradientSeamless {
-  0% {
-    background-position: 100% 0;
-  }
-
-  /* Start from right */
-  100% {
-    background-position: 0% 0;
-  }
-
-  /* Move to left smoothly */
-}
-
 
 /* Scrollable Row */
 .scrollable_cards_row {
@@ -636,7 +669,7 @@ header.hidden {
   overflow-x: auto;
   padding-bottom: 10px;
   scrollbar-width: thin;
-  scrollbar-color: #457b9d #e0e0e0;
+  scrollbar-color: rgb(0, 0, 0) #222;
 }
 
 /* Custom Scrollbar (Webkit) */
@@ -738,6 +771,7 @@ header.hidden {
   transition: 0.3s ease;
   align-self: flex-end;
   width: auto;
+  animation: zoomIn 0.5s ease;
 }
 
 .exit_button:hover {
@@ -757,6 +791,7 @@ header.hidden {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
+  animation: zoomIn 0.5s ease;
 }
 
 .full_screen_title::after {
@@ -767,6 +802,7 @@ header.hidden {
   background: linear-gradient(to right, #FF5733, #FFC300);
   margin: 10px auto 0;
   border-radius: 2px;
+  animation: zoomIn 0.5s ease;
 }
 
 /* Full-Screen Image */
@@ -779,6 +815,8 @@ header.hidden {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
   object-fit: contain;
   margin-bottom: 20px;
+  box-shadow: 0 0 5px #0ff, 0 0 5px #0ff;
+  animation: zoomIn 0.5s ease;
 }
 
 /* WhatsApp Button */
@@ -791,13 +829,40 @@ header.hidden {
   border-radius: 5px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
   transition: 0.3s ease;
-  width: 100%;
+  width: fit-content;
   text-align: center;
+  animation: zoomIn 0.5s ease;
 }
 
 .whatsapp_button:hover {
   background: #20c357;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -822,6 +887,10 @@ header.hidden {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.mughader_last_section h1 {
+  text-shadow: 0 0 2px #0ff, 0 0 2px #0ff;
 }
 
 .mughader_last_section * {
@@ -1098,6 +1167,7 @@ header.hidden {
   font-size: 1.5rem;
   color: #333;
   margin-bottom: 15px;
+  text-shadow: 0 0 1px #0ff, 0 0 1px #0ff;
 }
 
 /* Form styling */
@@ -1226,7 +1296,7 @@ footer * {
   color: white;
   text-align: center;
   font-size: 0.9rem;
-  text-shadow: 0 0 5px #00eaff;
+  text-shadow: 0 0 2px #00eaff;
 }
 
 
@@ -1274,12 +1344,6 @@ footer * {
     max-height: 70vh;
     margin-bottom: 20px;
   }
-
-  .whatsapp_button {
-    width: auto;
-    max-width: 300px;
-    margin-top: 20px;
-  }
 }
 
 
@@ -1324,7 +1388,6 @@ footer * {
   /* Offer Cards Section */
   #scrollable_cards_section_id {
     padding: 5px 2px;
-    background-color: #f8f9fa;
   }
 
   .scrollable_section_title {
@@ -1530,7 +1593,6 @@ footer * {
   .full_screen_title,
   .full_screen_image,
   .whatsapp_button {
-    width: 100%;
     text-align: center;
   }
 
@@ -1544,10 +1606,6 @@ footer * {
     padding: 2px 10px;
     margin-right: 10px;
     margin-bottom: 10px;
-  }
-
-  .whatsapp_button {
-    width: auto;
   }
 
 
@@ -1590,6 +1648,15 @@ footer * {
 
 /* Responsive Adjustments */
 @media (max-width: 600px) {
+
+  /* Logo */
+  .mughader_header_logo {
+    width: 25vw;
+  }
+
+
+
+
   .email_subscription_form input {
     width: 100%;
   }
@@ -1601,6 +1668,26 @@ footer * {
   /* Page Intro Section */
   .wow_effect_section {
     height: 40vh;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  footer img {
+    width: 25vw;
   }
 }
 
@@ -1627,10 +1714,7 @@ footer * {
     justify-content: space-between;
   }
 
-  /* Logo */
-  .mughader_header_logo {
-    width: 4.5rem;
-  }
+
 
 
 

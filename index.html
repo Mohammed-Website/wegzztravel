@@ -25,7 +25,7 @@
             <img src="مكتب-سياحي/مكتب-سياحي-بحريني.webp" alt="مكتب سياحي - مغادر" class="mughader_header_logo">
             <nav class="mughader_desktop_nav">
                 <ul class="mughader_nav_links">
-                    <li><a onclick="closeSidebar()">الصفحة الرئيسية</a></li>
+                    <li><a onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); closeSidebar()">الصفحة الرئيسية</a></li>
                     <li><a onclick="scrollToWhoAreWe('about_us_section_id')">من نحن؟</a></li>
                     <li>
                         <a href="https://www.instagram.com/wegzztravel?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
@@ -47,7 +47,7 @@
         <div class="mughader_mobile_sidebar" id="mughader_mobile_sidebar">
             <span class="mughader_close_icon" onclick="closeSidebar()">&times;</span>
             <ul>
-                <li><a onclick="closeSidebar()">الصفحة الرئيسية</a></li>
+                <li><a onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); closeSidebar()">الصفحة الرئيسية</a></li>
                 <li><a onclick="scrollToWhoAreWe('about_us_section_id'); closeSidebar()">من
                         نحن؟</a></li>
 

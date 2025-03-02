@@ -292,7 +292,7 @@ function scrollToMiddleOfElement(className) {
         const elementRect = element.getBoundingClientRect();
         const absoluteElementTop = elementRect.top + window.scrollY;
         const middlePosition = absoluteElementTop - (window.innerHeight / 2) + (elementRect.height / 2);
-        
+
         window.scrollTo({
             top: middlePosition,
             behavior: 'smooth'
@@ -416,6 +416,7 @@ const sectionData = [
     },
 ];
 
+
 // Function to dynamically create the section
 function createScrollableCardsSection(dataArray) {
     const section = document.getElementById("scrollable_cards_section_id");
@@ -503,16 +504,25 @@ function openFullScreenImage(src, text) {
 
     // Smooth close function
     function closeFullScreenImage() {
-        fullScreenDiv.classList.remove('visible'); // Trigger fade-out
-        setTimeout(() => fullScreenDiv.remove(), 300); // Remove element after fade-out
+        const fullScreenDiv = document.querySelector('.full_screen_container');
+        if (!fullScreenDiv) return;
 
 
-        document.body.style.overflow = ''; // Re-enable document scrolling
+        fullScreenDiv.style.opacity = '0';
+
+
+        setTimeout(() => {
+            fullScreenDiv.remove();
+            document.body.style.overflow = '';
+        }, 500);
     }
 }
 
 // Call the function with the sample data
 createScrollableCardsSection(sectionData);
+
+
+
 
 
 
