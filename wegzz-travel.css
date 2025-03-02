@@ -382,28 +382,18 @@ header.hidden {
 
 /* Mobile Menu Icon */
 .mughader_mobile_menu_icon {
-  color: black;
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
+  color: white;
+  text-shadow: 0 0 5px #00eaff, 0 0 5px #00eaff;
+  transition: 0.3s ease-in-out;
 }
 
 /* Neon Sidebar */
 .mughader_mobile_sidebar {
   background-color: rgba(0, 0, 0, 0.9);
   box-shadow: -2px 0 10px rgba(0, 238, 255, 0.5);
-}
-
-/* Neon Menu Button */
-.mughader_mobile_menu_icon {
-  color: white;
-  text-shadow: 0 0 5px #ff00ff, 0 0 5px #ff00ff;
-  transition: 0.3s ease-in-out;
-}
-
-.mughader_mobile_menu_icon:hover {
-  transform: scale(1.1);
-  text-shadow: 0 0 20px #ff00ff;
 }
 
 /* Sidebar (Mobile) */
