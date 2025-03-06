@@ -65,7 +65,7 @@ let time = 0;
 
 function drawCrescentMoon() {
     const baseX = canvas.width - 150;
-    const moonY = 100;
+    const moonY = 85;
     const outerRadius = 50;
     const innerRadius = 45;
 
@@ -360,7 +360,6 @@ scrollToWhoAreWe = function (elementIdName) {
             behavior: "smooth"
         });
     }
-
 }
 
 function scrollToMiddleOfElement(className) {
